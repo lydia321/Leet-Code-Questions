@@ -4,7 +4,7 @@ class Solution:
         arr[0]=nums[0]  #add first element to start with
         
         for i in range(1,len(nums)): 
-            if arr[i-1] > 0:  #look at the value of last index of arr
+            if arr[i-1] > 0:  #look at the value of last index of arr, 
                 arr[i]=nums[i]+arr[i-1]
             else:
                 arr[i]=nums[i]
@@ -24,7 +24,14 @@ class Solution:
                  
                  
 #                 '''
+        '''
+        [0,0,0,0,0,0,0,0,0,0,0]
+        [-2,1,-3,4,-1,2,1,-5,4]
         
+        [-2,1,-2,4,3,5,6,1,5] 
+        
+        
+        '''
                        
         
      
