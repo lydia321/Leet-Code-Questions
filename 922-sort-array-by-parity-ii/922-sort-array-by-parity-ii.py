@@ -4,17 +4,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        E=[]
+        O=[]
         output=[]
-        evenArr = []
-        oddArr = []
-        for i in nums:
-            if i % 2 == 0:
-                evenArr.append(i)
+        for i in range(len(nums)):
+            if nums[i]%2==0:
+                E.append(nums[i])
             else:
-                oddArr.append(i)
-        for i in range(len(evenArr)):
-            output.append(evenArr[i])
-            output.append(oddArr[i])
-        return output
+                O.append(nums[i])
+        for i in range(len(E)):
+            output.append(E[i])
+            output.append(O[i])
+        return output    
+        
     
                 
