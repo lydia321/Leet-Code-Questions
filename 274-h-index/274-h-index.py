@@ -1,13 +1,8 @@
-class Solution(object):
-    def hIndex(self, citations):
-        c=reversed(sorted(citations))
-        for i,val in enumerate(c):
-            if i>=val:
+class Solution:
+    def hIndex(self, citations: List[int]) -> int:
+        citations.sort(reverse = True)
+        for i,val in enumerate(citations):
+            if i >= val:
                 return i
-        return len(citations)
-            
-                
-                
-                
-      
+        return len(citations)    
         
