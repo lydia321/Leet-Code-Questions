@@ -10,8 +10,14 @@ class Solution:
         reminder=0
         
         while l1 or l2 or reminder:
-            v1=l1.val if l1 else 0
-            v2=l2.val if l2 else 0
+            if l1:
+                v1=l1.val
+            else:
+                v1=0
+            if l2:
+                v2=l2.val
+            else:
+                v2=0
             
             # adding the numbers
             s=v1+v2+reminder
