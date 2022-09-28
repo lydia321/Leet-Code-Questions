@@ -21,14 +21,22 @@ class Solution:
             
             # adding the numbers
             s=v1+v2+reminder
-            reminder=s //10
-            s=s%10
-            curr.next=ListNode(s)
             
-            #Updating pointers                
+            reminder=s //10
+            
+            s=s%10
+            
+            curr.next=ListNode(s)             
             curr=curr.next
-            l1=l1.next if l1 else None
-            l2=l2.next if l2 else None
+            
+            if l1:
+                l1=l1.next
+            else:
+                l1=None
+            if l2:
+                l2=l2.next
+            else:
+                l2=None
             
         return output.next      
             
