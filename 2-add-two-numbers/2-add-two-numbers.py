@@ -6,17 +6,18 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         a,b='',''
+        output=ListNode(0)
+        dummy=output
         while l1:
-            a= str(l1.val) +a #to reversee the order
+            a= str(l1.val) + a
             l1=l1.next
         while l2:
-            b=str(l2.val) +b  #to reverse the order
+            b=str(l2.val) + b
             l2=l2.next
         sum=int(a)+int(b)
-        output=ListNode()
-        curr=output
-        for i in reversed(str(sum)):
-            curr.next=ListNode(i)
-            curr=curr.next
+        s=reversed(str(sum))
+        for i in s:
+            dummy.next=ListNode(i)
+            dummy=dummy.next
         return output.next    
             
