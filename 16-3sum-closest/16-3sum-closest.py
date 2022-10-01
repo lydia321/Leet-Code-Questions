@@ -17,8 +17,6 @@ class Solution:
                     total = sum_
                 if sum_ > target:
                     r-=1
-                elif sum_ < target:
-                    l+=1
-                else: return sum_
-             
+                else:
+                    l+=1     
         return total
