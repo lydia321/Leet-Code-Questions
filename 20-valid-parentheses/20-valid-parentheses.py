@@ -14,4 +14,7 @@ class Solution:
                 else:
                     return False
             i+=1    
-        return stack == []        
+        if stack == []:
+            return True
+        else:
+            return False
