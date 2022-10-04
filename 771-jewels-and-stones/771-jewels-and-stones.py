@@ -1,11 +1,14 @@
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         lookup={}
-        for j in jewels:
-            lookup[j]=1
+        count= 0 
         
-        count=0
+        for i in jewels:
+            lookup[i]=1
+            
         for s in stones:
             if lookup.get(s) != None:
                 count+=1
+                
         return count        
+            
