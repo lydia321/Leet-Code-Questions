@@ -1,14 +1,18 @@
 class Solution:
     def maxCoins(self, piles: List[int]) -> int:
         piles.sort()
-        r = len(piles) - 2
-        rounds = len(piles) // 3
-        total = 0
+        rounds=len(piles) // 3
         
-        for _ in range(rounds):
-            total += piles[r]
-            r -= 2
+        r= len(piles) - 2
+        count=0
+        
+        for i in range(rounds):
+            count +=piles[r]
+            r-=2
+        
+        return count
             
-        return total
+            
+        
             
             
