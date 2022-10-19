@@ -15,7 +15,7 @@ class Solution:
             else:
                 stack.append(i) 
                 check.append(i)
-                
+        
         output = ''.join(stack)
         return output
         
