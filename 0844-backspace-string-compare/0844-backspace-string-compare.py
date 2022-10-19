@@ -10,6 +10,7 @@ class Solution:
                 if s1:
                     s1.pop()        
         for i in t:
+            
             if i != '#':
                 s2.append(i)  
             else:
@@ -22,6 +23,7 @@ class Solution:
         return result
                 
             
+               
             
             
             
