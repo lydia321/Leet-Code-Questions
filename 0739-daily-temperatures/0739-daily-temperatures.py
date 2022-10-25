@@ -17,14 +17,10 @@ class Solution:
         stack = []   
         res = [0]*len(temp)
     
-        for i in range(len(temp)):
-            while stack and temp[i]>temp[stack[-1]]:
-                diff = i-stack[-1]
-                print(diff)
-                res[stack[-1]] = diff
-                stack.pop()  
-                temp[i]
-            stack.append(i)    
-        return res    
+        for i,t in enumerate(temp):
+            while stack and stack[-1][0] < temp[i]:
+                stackt,stackidx = stack.pop()
+                res[stackidx] = i-stackidx
         
-                
+            stack.append([t,i])    
+        return res    
