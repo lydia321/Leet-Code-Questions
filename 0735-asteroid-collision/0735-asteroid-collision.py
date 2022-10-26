@@ -3,19 +3,17 @@ class Solution:
         stack = []
         
         for i in a:
-            while stack and i < 0 and stack[-1] > 0:
-                
-                if abs(i) == (stack[-1]):
+            while stack and stack[-1] > 0 and i < 0:
+                if abs(i) < stack[-1]:
+                    break
+                elif abs(i)==stack[-1]:
                     stack.pop()
                     break
-                elif abs(i) > stack[-1]:
+                else:
                     stack.pop()
-                elif abs(i) < stack[-1]:
-                    break   
-            else:    
+            else:
                 stack.append(i)
-        return stack           
-             
+        return stack  
        
            
                 
