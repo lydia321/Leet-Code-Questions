@@ -5,7 +5,6 @@ class Solution:
         
         for i,c in a.most_common():
             res = res + i*c
-                
         return str(res)   
         
         
