@@ -7,7 +7,7 @@ class Solution:
             if a not in s1 and b not in s2:
                 s1[a] = b
                 s2[b] = a
-            elif s1.get(a) != b or s2.get(b) != a:
+            elif s1.get(a) != b :
                 return False
         return True    
        
