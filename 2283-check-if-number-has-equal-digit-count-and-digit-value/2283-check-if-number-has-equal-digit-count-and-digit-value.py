@@ -4,9 +4,7 @@ class Solution:
         for i in range(len(num)):
             c = num.count(str(i))
             print(c)
-            if int(num[i]) == c:
-                continue
-            else:
+            if int(num[i]) != c:
                 return False
         return True
             
