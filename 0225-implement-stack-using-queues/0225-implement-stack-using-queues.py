@@ -1,26 +1,24 @@
 class MyStack:
 
     def __init__(self):
-        self.arr = []
+        self.arr = collections.deque()
         
 
     def push(self, x: int) -> None:
         self.arr.append(x)
+        
+        for _ in range(len(self.arr)-1):
+            self.arr.append(self.arr.popleft())
 
     def pop(self) -> int:
-        k = self.arr.pop()
-        return k
+        return self.arr.popleft()
         
-        
-
     def top(self) -> int:
-        return self.arr[-1]
-        
+        return self.arr[0]
 
     def empty(self) -> bool:
-        if len(self.arr) == 0:
-            return True
-        return False
+        return len(self.arr) == 0
+            
 
 
 # Your MyStack object will be instantiated and called as such:
@@ -29,3 +27,5 @@ class MyStack:
 # param_2 = obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.empty()
+
+   
