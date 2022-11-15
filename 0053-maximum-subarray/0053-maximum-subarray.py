@@ -4,10 +4,12 @@ class Solution:
         currSub = 0
         
         for n in nums:
+            #if our currSub becomes -ve, reset back to 0,disregared those prefixes
             if currSub < 0:
                 currSub = 0
             currSub += n
             maxSub = max(currSub,maxSub)
+            print(maxSub)
         return maxSub
 #         arr=[0]*len(nums) #array of 0's *length
 #         arr[0]=nums[0]  #add first element to start with
