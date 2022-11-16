@@ -1,7 +1,7 @@
 class MyCircularDeque:
 
     def __init__(self, k: int):
-        self.arr = []
+        self.arr = deque()
         self.counter = 0
         self.size= k
         
@@ -26,7 +26,7 @@ class MyCircularDeque:
         if self.isEmpty():
             return False
         else:
-            self.arr.pop(0)
+            self.arr.popleft()
             self.counter -= 1
             return True
     
