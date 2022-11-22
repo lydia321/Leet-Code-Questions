@@ -1,23 +1,16 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        count = 0
-        L = 0
-        s.split(' ')
-        S = Counter(s)
+        count = L = 0
         
-        for i in S.values():
-            print(i)
+        for i in Counter(s).values():
             if i%2 == 1:
-                i -= 1
-                count += i
+                count += i-1 
                 L += 1
             else:
                 count += i
-                
-           
-                
-        if L != 0:
-            count += 1
+                       
+        if L != 0: count += 1
+            
         return count        
         
             
