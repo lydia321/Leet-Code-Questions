@@ -10,7 +10,6 @@ class Solution:
         if res < 0:
             res = abs(res)+1
             return res
-        else:
-            return 1
+        else: return 1
         
         
