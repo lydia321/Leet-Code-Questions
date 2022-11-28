@@ -3,8 +3,9 @@ class Solution:
         res = 0 
         for i in range(len(arr)):
             for j in range(i+1,len(arr)+1):
-                if len(arr[i:j])%2 ==1:
-                    res += sum(arr[i:j])
+                subArr = arr[i:j]
+                if len(subArr)%2 ==1:
+                    res += sum(subArr)
         return res   
            
         
