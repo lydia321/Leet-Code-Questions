@@ -6,10 +6,10 @@ class Solution:
             res.append(res[-1]*rnums[i])
         res = res[::-1]
           
-        pos = 1 
+        curr = 1 
         for i in range(len(nums)):
-            res[i] *= pos
-            pos *= nums[i]
+            res[i] *= curr
+            curr *= nums[i]
         return res
             
         
