@@ -3,7 +3,9 @@ class Solution:
         l = r = 0
         lenght = float("inf")
         curr = nums[0]
+        
         while r < len(nums) and l <= r:
+            
             if curr < target:
                 r += 1
                 if r < len(nums): curr += nums[r]
