@@ -1,11 +1,12 @@
 class Solution:
     def checkSubarraySum(self, nums: List[int], k: int) -> bool:
-        seen, prev, curr = set(), 0, 0
-        for n in nums:
-            prev, curr = curr, (curr + n) % k
-            if curr in seen: return True
-            seen.add(prev)
+        Map = {0:-1}
+        curr = 0
+        for i,n in enumerate(nums):
+            curr += n
+            r = curr%k
+            if r not in Map:
+                Map[r]=i
+            elif i - Map[r] > 1:
+                return True
         return False
-              
-        
-   
