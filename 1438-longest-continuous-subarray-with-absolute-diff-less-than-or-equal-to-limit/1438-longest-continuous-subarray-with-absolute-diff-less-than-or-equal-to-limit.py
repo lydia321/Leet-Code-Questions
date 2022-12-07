@@ -7,7 +7,7 @@ class Solution:
         for r in range(len(nums)):
             # move r
             sorted_list.add(nums[r])
-
+           
             while sorted_list[-1] - sorted_list[0] > limit:
                 # move l
                 sorted_list.remove(nums[l])
