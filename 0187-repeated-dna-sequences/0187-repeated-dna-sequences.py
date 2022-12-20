@@ -8,5 +8,6 @@ class Solution:
             if curr in lookup:
                 res.add(curr)
             lookup.add(curr)     
+        # print(lookup)
         return res
         
