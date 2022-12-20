@@ -1,13 +1,13 @@
 class Solution:
     def greatestLetter(self, s: str) -> str:
-        new = ""
+        res = ""
         
         for i in s:
             if i.isupper() and i.lower() in s:
-                if i>new:
-                    new = i.upper()
+                if i > res:
+                    res = i.upper()
                         
-        return new
+        return res
 		
             
         
