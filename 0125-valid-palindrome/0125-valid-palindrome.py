@@ -1,12 +1,15 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        res = ''
+        res = ""
+        res2 = ""
+        
         for i in s:
-            if re.match('^[a-zA-Z0-9]+$',i):
+            if i.isalnum():
                 res = res + i.lower()
-        if res == res[::-1]:
+                res2 = i.lower() + res2
+        print(res,res2)
+        if res == res2:
             return True
         return False
-    
         
         
