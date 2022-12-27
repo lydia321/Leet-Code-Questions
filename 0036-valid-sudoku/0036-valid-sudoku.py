@@ -1,47 +1,52 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        def checkRow(i, j):
-            for c in range(9):
-                if c != j:
-                    if board[i][j] == board[i][c]:
-                        return False       
+        def checkRow(row,col):
+            for each_col in range(9):
+                if each_col != col: #each col except for the col passed
+                    if board[row][col] == board[row][each_col]:
+                        return False
             return True
 
-        def checkCol(i, j):
-            for r in range(9):
-                if r != i:
-                    if board[i][j] == board[r][j]:
+        def checkCol(row,col):
+            for each_row in range(9):
+                if each_row != row: # each row except the one passed
+                    if board[row][col] == board[each_row][col]:
+                        
                         return False
+            return True
 
-            return True    
-
-        def checkBox(i, j):
-            if i in (0, 1, 2):  
-                rs, re = 0, 2
-            elif i in (3, 4, 5):
-                rs, re = 3, 5
+        def checkBox(row,col):
+            if row in (0, 1, 2):
+                row_start,row_end = 0, 2
+            elif row in (3, 4, 5):
+                row_start , row_end = 3, 5
             else:
-                rs, re = 6, 8
+                row_start, row_end = 6, 8
 
-            if j in (0, 1, 2):  
-                cs, ce = 0, 2
-            elif j in (3, 4, 5):
-                cs, ce =3, 5
+            if col in (0, 1, 2):
+                col_start, col_end = 0 ,2
+            elif col in (3, 4, 5):
+                col_start, col_end = 3, 5
             else:
-                cs, ce = 6, 8    
+                col_start, col_end = 6, 8
 
-            for r in range(rs, re + 1):
-                for c in range(cs, ce + 1):
-                    if i != r or j != c:
-                        if board[i][j] == board[r][c]:
+                
+            for r in range(row_start, row_end + 1):
+                
+                for c in range(col_start, col_end + 1):
+                    
+                    if row != r or col != c:
+                        
+                        if board[row][col] == board[r][c]:
+                            
                             return False
-            return True    
+                                    
+            return True
 
-        for i in range(9):
-            for j in range(9):
-                if board[i][j] != '.':
-                    if checkRow(i, j) and checkCol(i, j) and checkBox(i, j):
+        for row in range(9):
+            for col in range(9):
+                if board[row][col] != '.':
+                    if checkRow(row,col) and checkCol(row,col) and checkBox(row,col):
                         continue
                     return False
-
         return True
