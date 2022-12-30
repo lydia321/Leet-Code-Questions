@@ -1,13 +1,11 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        lookup = []
-        l = res = 0
-        
-        for r in range(len(s)):
-            while s[r] in lookup:
-                lookup.remove(s[l])
-                l += 1
-            lookup.append(s[r])
-            
-            if len(lookup) > res:   res = len(lookup)
+        lookup = deque()
+        res = 0
+     
+        for r in s:
+            while r in lookup:
+                lookup.popleft()
+            lookup.append(r)
+            res = max(res,len(lookup))
         return res
