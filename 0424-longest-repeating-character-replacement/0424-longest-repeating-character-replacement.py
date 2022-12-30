@@ -1,14 +1,15 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        res = l = 0
-        curr = {}
+        res = 0
+        l = 0
+        lookup = {}
         
         for r in range(len(s)):
-            curr[s[r]] = 1 + curr.get(s[r],0)
+            lookup[s[r]] = 1 + lookup.get(s[r], 0)
             
-            while sum(curr.values()) - max(curr.values()) > k:
-                curr[s[l]] -= 1
-                
-                l += 1    
-            res = max(res,r-l+1)
+            while (r - l + 1) - max(lookup.values()) > k:
+                lookup[s[l]] -= 1
+                l += 1
+            res = max(res, (r - l + 1))
         return res
+            
