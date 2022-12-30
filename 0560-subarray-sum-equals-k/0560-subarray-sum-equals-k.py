@@ -1,23 +1,18 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-       
-        ps = {0:1}
-        res = 0
         curr = 0
+        lookup = {0:1}
+        res = 0
         
-        for i in nums:
-            curr += i
-            if (curr - k) in ps:
-                res += ps[curr-k]
-            if curr not in ps:
-                ps[curr] = 1
-            else:
-                ps[curr] += 1
-                
+        for r in range(len(nums)):
+            curr += nums[r]
+            value = curr - k
+            if value in lookup:
+                res += lookup[value]
+            lookup[curr] = 1 + lookup.get(curr,0)
+        return res
+       
             
-        return res          
-        
-        
         
 #         count = 0
 #         curr = 0
