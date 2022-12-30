@@ -12,11 +12,3 @@ class Solution:
         return MinDiff
     
     
-#    nums.sort()
-#         m,n=100001,len(nums)
-#         i,j=0,k-1
-#         while j<n:
-#             m=min(m,nums[j]-nums[i])
-#             i+=1
-#             j+=1
-#         return m
