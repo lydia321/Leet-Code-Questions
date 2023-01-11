@@ -1,14 +1,13 @@
 class Solution:
     def balancedString(self, s: str) -> int:
         number_of_apperance = len(s)//4
-        # print(number_of_apperance)
         lookup = {}
         
         for i in range(len(s)):
             lookup[s[i]] = 1 + lookup.get(s[i],0)
         if max(lookup.values()) == number_of_apperance:
             return 0
-        print(lookup)    
+        # print(lookup)    
         res = len(s)
         l = 0
         for r in range(len(s)):
@@ -18,11 +17,4 @@ class Solution:
                 if s[l] in lookup: lookup[s[l]] += 1
                 l += 1
         return res
-        # print(lookup, number_of_apperance, len(s))
-#         for val,count in lookup.items():
-#             curr = max(count)
-#             if count > number_of_apperance:
-#                 print(count)
-#                 res += count - number_of_apperance 
-         
-#         return res
+        
