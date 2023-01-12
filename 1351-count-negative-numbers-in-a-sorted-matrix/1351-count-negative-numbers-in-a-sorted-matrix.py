@@ -7,10 +7,9 @@ class Solution:
             while l <= r:
                 m = (l+r)//2                
                 if i[m] < 0:
+                    neg_Count += r - m + 1
                     r = m - 1
                 else:
-                    l = m + 1
-            neg_Count += len(i) - l 
-                    
+                    l = m + 1         
         return neg_Count
                 
