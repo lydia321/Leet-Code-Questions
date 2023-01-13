@@ -2,7 +2,6 @@ class Solution:
     def hIndex(self, citations: List[int]) -> int:
         l = 0
         r = len(citations)-1
-        
         if len(citations) == 0:
             return 0
         
@@ -15,6 +14,6 @@ class Solution:
         
         if citations[l] == 0:
             return 0
-        return len(citations) - r
+        return len(citations) - l
 
     
