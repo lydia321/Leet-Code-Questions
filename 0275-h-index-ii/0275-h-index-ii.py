@@ -14,6 +14,6 @@ class Solution:
         
         if citations[l] == 0:
             return 0
-        return len(citations) - l
+        return len(citations) - r
 
     
