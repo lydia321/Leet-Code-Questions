@@ -11,12 +11,12 @@ class Solution:
         r = n
         
         while l <= r:
-            m = (l + r)//2
+            m = (l+r)//2
             curr = guess(m)
             
-            if curr == 1:
+            if curr == -1:
+                r = m - 1
+            elif curr == 1:
                 l = m + 1
-            elif curr == -1:
-                r = m 
             else:
                 return m
