@@ -12,11 +12,15 @@
 class Solution:
     def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
         res = []
-        
-        for x in range(1,1001):
-            for y in range(1,1001):
-                if customfunction.f(x,y) == z:
-                    res.append([x,y])
-                elif customfunction.f(x,y) > z:
+        for x in range(1, z + 1):
+            l,r = 1 , z
+            while l <= r:
+                m = (l+r)//2
+                if customfunction.f(x,m) == z:
+                    res.append([x,m])
                     break
+                elif customfunction.f(x,m) > z:
+                    r = m - 1
+                else:
+                    l = m + 1
         return res
