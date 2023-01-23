@@ -1,6 +1,13 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        nums.sort(reverse= True)
-        arr=nums[:2]
-        arr=(arr[0]-1)*(arr[1]-1)
-        return arr
+        heap = [-1]
+        
+        for i in nums:
+            if i > heap[0]:
+                if len(heap) == 2:
+                    heapq.heappop(heap)
+                heapq.heappush(heap,i)
+        
+            
+        res = (heap[0] - 1) * (heap[1] - 1)
+        return res
