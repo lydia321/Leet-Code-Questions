@@ -3,19 +3,16 @@ class Solution:
         dict = {}
         for i in nums:
             dict[i] = 1 + dict.get(i,0)
-        # print(dict)
+        print(dict)
         
-        dictlist = defaultdict(list)
+        heap = []
         for i in dict:
-            dictlist[dict[i]].append(i)
+            heapq.heappush(heap,(-dict[i],i))
+        print(heap)
         
         res = []
-        # print(dictlist)
-        for freq,list_ in sorted(dictlist.items(),reverse = True):
-            for num in list_:
-                res.append(num)
-                if len(res) == k:
-                    return res
-        
-        
-        
+        for i in range(k):
+            val = heapq.heappop(heap)
+            res.append(val[1])
+        return res
+            
