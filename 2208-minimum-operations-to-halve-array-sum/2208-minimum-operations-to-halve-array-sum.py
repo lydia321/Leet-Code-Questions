@@ -5,15 +5,10 @@ class Solution:
             heap.append(-i)
         heapq.heapify(heap)
 
-        count = 0
-        
-        Total_sum = -sum(heap)
-        curr_sum = Total_sum
-        half_initial_sum = Total_sum/2
-        # print(half_initial_sum)
-        
-        for _ in range(len(nums)):
-            
+        Total_sum, count = -sum(heap), 0
+        curr_sum, half_initial_sum= Total_sum, Total_sum/2
+     
+        for _ in range(len(nums)):  
             val = heapq.heappop(heap)
             curr = val/2
             # print(val,curr)
