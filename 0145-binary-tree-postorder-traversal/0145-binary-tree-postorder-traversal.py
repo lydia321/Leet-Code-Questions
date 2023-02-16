@@ -14,8 +14,6 @@ class Solution:
             dfs(root.left)
             dfs(root.right)
             self.res.append(root.val)
-  
-        
         
         dfs(root)
         return self.res
