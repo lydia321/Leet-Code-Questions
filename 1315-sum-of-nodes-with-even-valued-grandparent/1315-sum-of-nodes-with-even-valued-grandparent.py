@@ -6,15 +6,16 @@
 #         self.right = right
 class Solution:
     def sumEvenGrandparent(self, root: TreeNode) -> int:
-        def dfs(grand, parent, node):
-            # print("Grand", grand.val if grand else None,"Parent", parent.val if parent else None,"Node", node.val if node else None)
+        self.total = 0
+        
+        def dfs(node,parent,grand):
             if not node:
                 return 0
-
-            total = 0
-            if grand and grand.val % 2 == 0:
-                total += node.val
-
-            return total + dfs(parent, node, node.left) + dfs(parent, node, node.right)
+            if grand and grand.val %2 == 0:
+                self.total += node.val
+            return self.total + dfs(node.left, node,parent) + dfs(node.right, node, parent)
+            
+        dfs(root,None,None)    
+        return self.total
         
-        return dfs(None, None, root)
+        
