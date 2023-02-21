@@ -8,13 +8,13 @@ class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         self.count = 0
        
-        def dfs(root,depth):
-            if root.val >= depth:
+        def dfs(root,curr_max):
+            if root.val >= curr_max:
                 self.count += 1
-                depth = root.val
+                curr_max = root.val
             if root.left:
-                dfs(root.left,depth)
+                dfs(root.left,curr_max)
             if root.right:
-                dfs(root.right,depth)                     
+                dfs(root.right,curr_max)                     
         dfs(root,root.val)
         return self.count
