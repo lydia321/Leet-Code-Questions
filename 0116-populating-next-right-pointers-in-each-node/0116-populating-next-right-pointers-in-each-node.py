@@ -10,44 +10,22 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        #O(1) Approch
         if not root:
-            return None
-        curr = root
-        Next_curr = root.left
+            return
+        queue = [root]
         
-        while curr and Next_curr:
-            curr.left.next = curr.right
-            #Bridge
-            if curr.next:
-                curr.right.next = curr.next.left
-            curr = curr.next
+        while queue:
+            length = len(queue)
             
-            if not curr:
-                curr = Next_curr
-                Next_curr = curr.left
+            for i in range(length):
+                curr = queue.pop(0)
+                
+                if i < length - 1:
+                    curr.next = queue[0]
+                else:
+                    curr.next = None
+                if curr.left:
+                    queue.append(curr.left)
+                if curr.right:
+                    queue.append(curr.right)
         return root
-        
-        
-#         #O(N) Approach
-#         if not root:
-#             return
-#         queue = [root]
-        
-        
-#         while queue:
-#             length = len(queue) -1
-#             for i in range(len(queue)):
-#                 curr = queue.pop(0)
-                
-#                 if i < length:
-#                     curr.next = queue[0]
-#                 else:
-#                     curr.next = None
-                    
-                
-#                 if curr.left:
-#                     queue.append(curr.left)
-#                 if curr.right:
-#                     queue.append(curr.right)
-#         return root
