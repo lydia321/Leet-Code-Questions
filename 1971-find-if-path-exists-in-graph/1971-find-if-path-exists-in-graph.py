@@ -13,7 +13,7 @@ class Solution:
             if root == destination:
                 return True
             for i in graph[root]:
-                if i not in visited and dfs(i):
+                if i not in visited and dfs(i) == True:
                     return True
                 
             return False
