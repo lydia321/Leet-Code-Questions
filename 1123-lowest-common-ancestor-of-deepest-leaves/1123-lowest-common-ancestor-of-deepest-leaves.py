@@ -26,6 +26,10 @@ class Solution:
                 return None
             left = dfs(root.left)
             right = dfs(root.right)
-            return root if (left and right or root in curr_deepest) else left or right
+            
+            if (left and right) or (root in curr_deepest):
+                return root
+            else:
+                return left or right
             
         return dfs(root)
