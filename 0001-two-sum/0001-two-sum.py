@@ -1,20 +1,15 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        res ={}
+        res = {}
+        a = []
         
-        for i,val in enumerate(nums):
-            diff =  target - val 
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            
             if diff in res:
-                return [res[diff],i] 
-            res[val]=i
-              
+                return [res[diff],i]
                 
+            res[nums[i]] = i
+            # print(res)
+         
         
-        
-                
-            
-
-            
-            
-       
-                    
