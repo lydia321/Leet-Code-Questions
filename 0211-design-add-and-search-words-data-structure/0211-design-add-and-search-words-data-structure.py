@@ -17,9 +17,10 @@ class WordDictionary:
         curr.end = True
     
     def search(self, word: str) -> bool:
-        curr_root = self.dict
+        curr = self.dict
         
         def dfs(idx,curr_root):
+            
             for i in range(idx,len(word)):
                 if word[i] == '.':
                     for val in curr_root.children.values():
@@ -31,7 +32,8 @@ class WordDictionary:
                         return False
                     curr_root = curr_root.children[word[i]]
             return curr_root.end
-        return dfs(0,curr_root)
+        
+        return dfs(0,curr)
         
     
         
