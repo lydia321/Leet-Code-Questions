@@ -1,14 +1,14 @@
 class Solution:
     def findMinHeightTrees(self, n: int, edge: List[List[int]]) -> List[int]:
-        graph = defaultdict(set)
+        graph = defaultdict(list)
         edges = defaultdict(int)  
         #if graph only has two nodes
         if n <= 2:
             return list(range(n))
         
         for i in edge:
-            graph[i[0]].add(i[1])
-            graph[i[1]].add(i[0])
+            graph[i[0]].append(i[1])
+            graph[i[1]].append(i[0])
             edges[i[0]] += 1
             edges[i[1]] += 1
         queue = []
