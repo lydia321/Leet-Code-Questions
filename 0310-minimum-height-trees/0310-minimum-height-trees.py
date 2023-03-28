@@ -19,8 +19,6 @@ class Solution:
                 queue.append(i)
         # print(queue)
         remaining_count = n
-        # while remaining_count > 2:
-        possible_res = []
         while queue:
             for _ in range(len(queue)):
                 remaining_count -= 1
@@ -34,7 +32,5 @@ class Solution:
                     queue.append(only_nei)
             if remaining_count <= 2:
                 return queue
-        #     queue = possible_res
-        # return queue
-                    
+ 
                     
