@@ -19,21 +19,22 @@ class Solution:
                 queue.append(i)
         # print(queue)
         remaining_count = n
-        
-        while remaining_count > 2:
-            possible_res = []
-            while queue:
-                for _ in range(len(queue)):
-                    remaining_count -= 1
-                    curr = queue.pop(0)
-                    # since it only has one neighbour
-                    only_nei = graph[curr].pop()
-                    graph[only_nei].remove(curr)
-                    edges[only_nei] -= 1
-                    edges[curr] -= 1
-                    if len(graph[only_nei]) == 1:
-                        possible_res.append(only_nei)
-            queue = possible_res
-        return queue
+        # while remaining_count > 2:
+        possible_res = []
+        while queue:
+            for _ in range(len(queue)):
+                remaining_count -= 1
+                curr = queue.pop(0)
+                # since it only has one neighbour
+                only_nei = graph[curr].pop()
+                graph[only_nei].remove(curr)
+                edges[only_nei] -= 1
+                edges[curr] -= 1
+                if len(graph[only_nei]) == 1:
+                    queue.append(only_nei)
+            if remaining_count <= 2:
+                return queue
+        #     queue = possible_res
+        # return queue
                     
                     
