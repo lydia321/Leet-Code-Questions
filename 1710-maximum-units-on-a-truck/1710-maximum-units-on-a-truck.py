@@ -10,6 +10,8 @@ class Solution:
                 if curr > 0:
                     curr -= 1
                     res += i[1]
+                else: 
+                    break
         return res
                 
             
