@@ -19,7 +19,7 @@ class Solution:
         if A.right:
             queue2.append(A.right)
         else: return False
-        if A.left.val != A.right.val: return False    
+       
         
         while queue1 and queue2:
             curr1 = queue1.pop()
