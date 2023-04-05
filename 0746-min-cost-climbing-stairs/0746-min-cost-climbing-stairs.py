@@ -4,6 +4,7 @@ class Solution:
         #[25,15,20,0]
         #[6,105,5,5,4,102,3,2,100,1,0]
         #Every idx will choose optimally from the two optimal solutions infront of it
+        
         #Base case 
         dp = [0,cost[-1]]
         
