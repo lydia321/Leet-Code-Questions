@@ -1,13 +1,11 @@
 class Solution:
     def fib(self, n: int) -> int:
-        #Base case
         if n == 0:
             return 0
-        if n == 1:
-            return 1
-        
-        #Recursion Case
-        return self.fib(n -1) + self.fib(n - 2)
-        
-            
-        
+        #Bottom Up DP
+        #Base Case 
+        dp = [0,1]
+        for i in range(n-2):
+            dp.append(dp[-1] + dp[-2])
+        return dp[-1] + dp[-2]    
+    
