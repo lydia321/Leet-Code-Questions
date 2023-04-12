@@ -17,17 +17,19 @@ class Solution:
             return 0
         res = 0
         stack = [-1]
+        dp = [0]*len(s)
         
         for i in range(len(s)):
             if s[i] == "(":
                 stack.append(i)
             else:
-                stack.pop()
+                j = stack.pop()
                 if not stack:
                     stack.append(i)
                 else:
                     res = max(res,i - stack[-1])
-        return res
+                    dp[i] = dp[j - 1] + (i - j + 1)
+        return max(dp)
                 
         
         
