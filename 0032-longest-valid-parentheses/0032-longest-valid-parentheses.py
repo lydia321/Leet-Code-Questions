@@ -1,40 +1,32 @@
 class Solution:
     def longestValidParentheses(self, s: str) -> int:
+        '''
+        () (()), ((
+        (())
+        )()())
+        
+        )()())()   4
+        )))
+        (()
+        
+        '''
         res = 0
-        stack = []
+        stack = [-1]
         
         for i in range(len(s)):
-            if len(stack) == 0:
-                stack.append(-1)
-            if s[i] == '(':
+            if s[i] == "(":
                 stack.append(i)
             else:
                 stack.pop()
+                # if i popped the last valid index
                 if not stack:
-                    stack.append(i)
+                    stack.append(i) #add new valid index
                 else:
                     res = max(res,i - stack[-1])
+                    
         return res
+        
                 
         
         
-        
-#         count = 0
-#         stack = []
-        
-#         for i in s:
-#             if len(stack) == 0:
-#                 if i == "(":
-#                     stack.append(i)
-#                 else:
-#                     continue
-#             elif stack[-1] == '(':
-#                 if i == "(":
-#                     stack.append(i)
-#                 else:
-#                     stack.pop()
-#                     count += 2
-#             else:
-#                 continue
-#         return count
-       
+      
