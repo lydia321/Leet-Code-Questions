@@ -5,7 +5,7 @@ class Solution:
         for i in range(len(s)-1,-1,-1):
             for each in wordDict:
                 curr = s[i:i+len(each)]
-                if i + len(each) <= len(s) and curr == each:
+                if curr == each:
                     dp[i] = dp[i + len(each)]
                 if dp[i] : 
                     break
