@@ -14,9 +14,9 @@ class Solution:
             idx = nums.index(curr_max)
             if idx < 0:
                 return
-       
             res = TreeNode(curr_max)
             res.left = dfs(l,idx - 1)
             res.right = dfs(idx+1,r)
             return res
+        
         return dfs(0,len(nums) - 1)
