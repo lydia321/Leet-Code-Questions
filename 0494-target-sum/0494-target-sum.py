@@ -12,7 +12,7 @@ class Solution:
             pos = dp(i - 1, total + nums[i])
             neg = dp(i - 1, total - nums[i])
             cache[(i,total)] = pos + neg
-            return pos + neg
+            return cache[(i,total)]
         
         return dp(len(nums)-1,0)
       
