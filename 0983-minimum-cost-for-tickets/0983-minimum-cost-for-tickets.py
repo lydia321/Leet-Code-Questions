@@ -1,21 +1,21 @@
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
         cache = {}
-        def closest(i,days,arr):
-            key = arr[i]
-            while i<len(arr) and arr[i]< key+days:
+        def closest(i,num,days):
+            key = days[i]
+            while i < len(days) and key + num > days[i]:
                 i+=1
             return i
 
-        def dp(days,i):
+        def dp(i):
 
-            if i>=len(days):
+            if i == len(days):
                 return 0
-            if days[i] in cache:
-                return cache[days[i]]
+            if i in cache:
+                return cache[i]
             
-            cache[days[i]] = min(dp(days,closest(i,1,days))+costs[0], dp(days,closest(i,7,days))+costs[1], dp(days,closest(i,30,days))+costs[2])
+            cache[i] = min(dp(closest(i,1,days))+costs[0], dp(closest(i,7,days))+costs[1], dp(closest(i,30,days))+costs[2])
             
-            return cache[days[i]]
+            return cache[i]
         
-        return dp(days,0)
+        return dp(0)
