@@ -14,7 +14,7 @@ class Solution:
             if i in cache:
                 return cache[i]
             
-            cache[i] = min(dp(closest(i,1,days))+costs[0], dp(closest(i,7,days))+costs[1], dp(closest(i,30,days))+costs[2])
+            cache[i] = min(dp(i+1)+costs[0], dp(closest(i,7,days))+costs[1], dp(closest(i,30,days))+costs[2])
             
             return cache[i]
         
