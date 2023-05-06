@@ -5,12 +5,13 @@ class Solution:
         nums = ['0','1','2','3','4','5','6','7','8','9']
         
         def dfs(curr,res):
-            if int(curr) > n:
+            if int(curr) >  n:
                 return res
             res.append(int(curr))
             
             for nxt in nums:
-                res = dfs(str(curr) + nxt, res)
+                res = dfs(curr + nxt,res)
+            
             return res
             
         for each in starting:
