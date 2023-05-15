@@ -1,13 +1,13 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        def checkRow(row,col):
+        def checkCol(row,col):
             for each_col in range(9):
                 if each_col != col: #each col except for the col passed
                     if board[row][col] == board[row][each_col]:
                         return False
             return True
 
-        def checkCol(row,col):
+        def checkRow(row,col):
             for each_row in range(9):
                 if each_row != row: # each row except the one passed
                     if board[row][col] == board[each_row][col]:
