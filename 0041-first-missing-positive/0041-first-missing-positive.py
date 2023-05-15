@@ -1,10 +1,10 @@
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
-        lookup = set(nums)
-        count = 1
-        
-        while count in lookup:
-            count+=1
-        return count
-                
-        
+        res = 1
+        nums = set(nums)
+        for i in nums:
+            if res in nums:
+                res += 1
+            else:
+                return res
+        return  res
