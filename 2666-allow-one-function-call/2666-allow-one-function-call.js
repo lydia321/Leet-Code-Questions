@@ -2,20 +2,17 @@
  * @param {Function} fn
  * @return {Function}
  */
-var once = function(fn) {
-    flag = false;
-    
-    return function(...args){
-        if (flag == false){
-            res = fn(...args);
-            flag = true;
-            return res;
-        }else{
-            return undefined ;
-        }
-               
+var once = function(fn){
+    flag = true
+    return function(...args) {
+        if (flag){
+            flag = false
+            return fn(...args)
+    }else{
+        return undefined
     }
-};
+    }
+}
 
 /**
  * let fn = (a,b,c) => (a + b + c)
