@@ -5,10 +5,10 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
-    curr = init
-    for( let i = 0; i < nums.length; i++){
-        curr = fn(curr, nums[i]);
+    let val = init;
+    for (let i = 0; i < nums.length; i++){
+       val = fn(val, nums[i]) 
     }
-    return curr
+    return val
     
 };
