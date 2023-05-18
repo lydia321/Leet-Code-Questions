@@ -2,12 +2,15 @@
  * @param {number} millis
  */
 function sleep(millis){
-    function callback(resolve,reject) {
-        setTimeout(() => {
-            resolve();
-        },millis)
-    }
-    return new Promise(callback)
+    return new Promise((resolve,reject) =>{
+        setTimeout((resolve),millis);
+    })
+    // function callback(resolve,reject) {
+    //     setTimeout(() => {
+    //         resolve();
+    //     },millis)
+    // }
+    // return new Promise(callback)
 }
 /** 
  * let t = Date.now()
