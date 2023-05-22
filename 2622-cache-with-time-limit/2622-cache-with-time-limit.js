@@ -1,5 +1,6 @@
 
 var TimeLimitedCache = function() {
+    //construct the map
     this.cache = new Map();
 };
 
@@ -10,33 +11,34 @@ var TimeLimitedCache = function() {
  * @return {boolean} if un-expired key already existed
  */
 TimeLimitedCache.prototype.set = function(key, value, duration) {
-    // if key already exists, we have to override the timeout
-    const Exist = this.cache.get(key);
-    if (Exist) {
-        clearTimeout(Exist.timeoutId);
+    //if expired we need to delete
+    //return True and clear timout if already exists ,False if otherwise
+    const exists = this.cache.get(key);
+    if (exists){
+        clearTimeout(exists.id)
     }
-    const timeoutId = setTimeout(() => this.cache.delete(key),duration);
-    this.cache.set(key, {value,timeoutId });
-    return Boolean(Exist);
-};
-
+    const id = setTimeout(()=>{
+        this.cache.delete(key)
+    },duration)
+    this.cache.set(key,{value,id});
+   return Boolean(exists);
+}
 /** 
  * @param {number} key
  * @return {number} value associated with key
  */
 TimeLimitedCache.prototype.get = function(key) {
-    if (this.cache.has(key)) {
+    //if key doesnt exist return -1
+    if (this.cache.has(key)){
         return this.cache.get(key).value;
-    } else {
-        return -1
     }
-}    
-
+    return -1;
+}
 /** 
  * @return {number} count of non-expired keys
  */
 TimeLimitedCache.prototype.count = function() {
-   return this.cache.size;
+    return this.cache.size;
 }
 
 /**
