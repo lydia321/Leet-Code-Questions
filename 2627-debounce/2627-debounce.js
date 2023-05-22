@@ -4,17 +4,13 @@
  * @return {Function}
  */
 var debounce = function(fn, t) {
-    let interval;
-  return function(...args) {
-    const lastCall = Date.now()
-    clearInterval(interval);
-    interval = setInterval(() => {
-      if (Date.now() - lastCall >= t) {
-        fn(...args);
-        clearInterval(interval);
-      }
-    }, 1);
-  }
+    let id;
+    return function(...args) {
+        clearTimeout(id);
+        id = setTimeout(() => {
+            fn(...args)
+        },t);
+    }
 };
 
 /**
