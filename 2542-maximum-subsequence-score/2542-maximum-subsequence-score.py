@@ -1,9 +1,7 @@
 class Solution:
     def maxScore(self, nums1: List[int], nums2: List[int], k: int) -> int:
-        pairs = [(a, b) for a, b in zip(nums1, nums2)]
+        pairs = [(a,b) for a,b in zip(nums1,nums2)]
         pairs.sort(key = lambda x: -x[1])
-        
-        # print(pairs)
         min_heap = []
         n1Sum,res = 0,0
         
