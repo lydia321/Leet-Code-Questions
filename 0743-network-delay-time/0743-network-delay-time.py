@@ -1,25 +1,23 @@
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        dict,shortest_path = defaultdict(set),defaultdict(int)
+        dict,visited = defaultdict(set),set()
         for i in times:
-            dict[i[0]].add((i[1],i[2])) 
-        for i in range(1,n):
-            shortest_path[i] = -inf
-        visited,res = set(),0
-      
+            dict[i[0]].add((i[1],i[2]))
+        #Dijkstra's Algorithm
+        res = 0
         queue = [(0,k)]
         
         while queue:
-            curr = heapq.heappop(queue)
-            if curr[1] not in visited:
-                visited.add(curr[1])
-                res = max(res,curr[0])
-                nghs = dict[curr[1]]
-                for ngh in nghs:
-                    if ngh[0] not in visited:
-                        heapq.heappush(queue,(ngh[1] + curr[0],ngh[0]))
-        return res if len(visited) == n else -1
+            cost,node = heapq.heappop(queue)
+            
+            if node not in visited:
+                visited.add(node)
+                res = max(res,cost)
+                for each in dict[node]:
+                    if each[0] not in visited:
+                        heapq.heappush(queue,(cost + each[1],each[0]))
                         
+        return res if len(visited) == n else -1
             
             
             
