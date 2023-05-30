@@ -27,7 +27,7 @@ class Solution:
                 res += i
             else:
                 break
-        print(res)
+#         print(res)
         
         if len(res) == 0 or (len(res) == 1 and res[0] == '-' ): 
             return 0
