@@ -6,7 +6,9 @@ class Solution:
                 return curr
             if (i,curr) in cache:
                 return cache[(i,curr)]
-            cache[(i,curr)] = dfs(i + 1, curr ^ nums[i]) + dfs(i + 1, curr )
+            skip = dfs(i + 1, curr)
+            keep = dfs(i + 1, curr ^ nums[i]) 
+            cache[(i,curr)] = skip + keep
             return cache[(i,curr)]
             
         return dfs(0,0)
