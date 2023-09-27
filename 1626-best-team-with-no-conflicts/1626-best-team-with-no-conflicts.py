@@ -1,22 +1,16 @@
 class Solution:
     def bestTeamScore(self, scores: List[int], ages: List[int]) -> int:
-        n = len(scores)
-        maxAge = max(ages)
-        dp = [0]*(maxAge+1)
-        infos = list(zip(scores, ages))
-        infos.sort()
+        n = list(zip(ages,scores))
+        n.sort(key=lambda x: (x[0], x[1]))
 
-        for score, age in infos:
-            x = age & (age-1)
-            while x:
-                dp[age] = max(dp[x], dp[age])
-                x &= x-1
-
-            dp[age] += score
-
-            x = age + (age&(-age))
-            while x <= maxAge:
-                dp[x] = max(dp[x], dp[age])
-                x += x&(-x)
-
+        print(n)
+        dp = []
+        for i in n:
+            dp.append(i[1])
+        
+        for i in range(len(n)-1,-1,-1):
+            for j in range(i+1,len(n)):
+                if n[i][1] <= n[j][1]:
+                    dp[i] = max(dp[i], dp[j] + n[i][1])
+        # print(dp)
         return max(dp)
