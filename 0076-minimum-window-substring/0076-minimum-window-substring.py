@@ -1,6 +1,3 @@
-from collections import Counter, defaultdict
-from math import inf
-
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         lookup = Counter(t)
