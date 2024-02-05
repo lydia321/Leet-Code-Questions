@@ -8,6 +8,7 @@ class Solution:
             valid += 1 if s[i] == '(' or locked[i] == '0' else -1   
             if valid < 0:
                 return False
+        
         balance = 0
         for i in range(len(s) - 1, -1, -1):
             balance += 1 if s[i] == ')' or locked[i] == '0' else -1
@@ -15,3 +16,7 @@ class Solution:
                 return False
 
         return True
+    
+    
+        
+        
