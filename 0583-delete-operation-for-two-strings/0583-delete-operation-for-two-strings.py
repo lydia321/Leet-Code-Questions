@@ -5,10 +5,10 @@ class Solution:
             if (i,j) in cache:
                 return cache[i,j]
             
-            # if i == len(word1) or j == len(word2):
-            #     return 0
-            if i == len(word1) or j == len(word2):
-                return max(len(word2) - j, len(word1) - i)
+            if i == len(word1):
+                return len(word2) - j
+            if j == len(word2):
+                return len(word1) - i
                 
             if word1[i] == word2[j]:
                 cache[(i,j)] = dfs(i+1,j+1)
