@@ -3,8 +3,7 @@ class Solution:
         cache = {}
         def dfs(i,j):
             if (i,j) in cache:
-                return cache[i,j]
-            
+                return cache[i,j]   
             if i == len(word1):
                 return len(word2) - j
             if j == len(word2):
