@@ -21,7 +21,7 @@ class Solution:
             room = heapq.heappop(available_rooms)
             heapq.heappush(used,[end,room])
             count[room] += 1
-        print(count)
+        # print(count)
         return count.index(max(count))
             
         
