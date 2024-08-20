@@ -3,13 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        while k > len(nums):
-            k -= len(nums)
-        b = nums[:len(nums) - k]
-        a = nums[len(nums) - k:]
-        a.extend(b)
-        for i in range(len(nums)):
-            nums[i] = a[i]
-        
-        
+        k = k % len(nums)
+        nums[:] = nums[-k:] + nums[:-k]
         
