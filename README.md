@@ -15,6 +15,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0083-remove-duplicates-from-sorted-list](https://github.com/lydia321/Leet-Code-Questions/tree/master/0083-remove-duplicates-from-sorted-list) |
 | [0141-linked-list-cycle](https://github.com/lydia321/Leet-Code-Questions/tree/master/0141-linked-list-cycle) |
 | [0146-lru-cache](https://github.com/lydia321/Leet-Code-Questions/tree/master/0146-lru-cache) |
+| [0206-reverse-linked-list](https://github.com/lydia321/Leet-Code-Questions/tree/master/0206-reverse-linked-list) |
 ## Design
 |  |
 | ------- |
@@ -39,6 +40,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/lydia321/Leet-Code-Questions/tree/master/0021-merge-two-sorted-lists) |
+| [0206-reverse-linked-list](https://github.com/lydia321/Leet-Code-Questions/tree/master/0206-reverse-linked-list) |
 ## Two Pointers
 |  |
 | ------- |
