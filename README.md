@@ -6,12 +6,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Hash Table
 |  |
 | ------- |
+| [0141-linked-list-cycle](https://github.com/lydia321/Leet-Code-Questions/tree/master/0141-linked-list-cycle) |
 | [0146-lru-cache](https://github.com/lydia321/Leet-Code-Questions/tree/master/0146-lru-cache) |
 ## Linked List
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/lydia321/Leet-Code-Questions/tree/master/0021-merge-two-sorted-lists) |
 | [0083-remove-duplicates-from-sorted-list](https://github.com/lydia321/Leet-Code-Questions/tree/master/0083-remove-duplicates-from-sorted-list) |
+| [0141-linked-list-cycle](https://github.com/lydia321/Leet-Code-Questions/tree/master/0141-linked-list-cycle) |
 | [0146-lru-cache](https://github.com/lydia321/Leet-Code-Questions/tree/master/0146-lru-cache) |
 ## Design
 |  |
@@ -37,4 +39,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/lydia321/Leet-Code-Questions/tree/master/0021-merge-two-sorted-lists) |
+## Two Pointers
+|  |
+| ------- |
+| [0141-linked-list-cycle](https://github.com/lydia321/Leet-Code-Questions/tree/master/0141-linked-list-cycle) |
+## Floyd's Cycle Finding Algorithm
+|  |
+| ------- |
+| [0141-linked-list-cycle](https://github.com/lydia321/Leet-Code-Questions/tree/master/0141-linked-list-cycle) |
 <!---LeetCode Topics End-->
