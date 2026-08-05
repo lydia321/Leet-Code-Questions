@@ -1,18 +1,20 @@
 class Solution:
     def finalPrices(self, prices: List[int]) -> List[int]:
-        output = []
-        
-        for i in range(len(prices)-1):
-            for j in range(i+1,len(prices)):
-                
-                if prices[i] >= prices[j]:
-                    output.append(prices[i]-prices[j])
+        res = []
+
+        for i in range(len(prices)):
+            for j in range(i + 1, len(prices)):
+                if prices[j] <= prices[i]:
+                    res.append(prices[i]-prices[j])
                     break
-                    
             else:
-                output.append(prices[i])
-        output.append(prices[-1])
-        return output
-                    
-                    
+                res.append(prices[i])
+        return res
+                
+
+
+
+
+ 
+
         
