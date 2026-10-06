@@ -56,9 +56,22 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Stack
 |  |
 | ------- |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/lydia321/Leet-Code-Questions/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 | [1475-final-prices-with-a-special-discount-in-a-shop](https://github.com/lydia321/Leet-Code-Questions/tree/master/1475-final-prices-with-a-special-discount-in-a-shop) |
 ## Monotonic Stack
 |  |
 | ------- |
 | [1475-final-prices-with-a-special-discount-in-a-shop](https://github.com/lydia321/Leet-Code-Questions/tree/master/1475-final-prices-with-a-special-discount-in-a-shop) |
+## String
+|  |
+| ------- |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/lydia321/Leet-Code-Questions/tree/master/0921-minimum-add-to-make-parentheses-valid) |
+## Greedy
+|  |
+| ------- |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/lydia321/Leet-Code-Questions/tree/master/0921-minimum-add-to-make-parentheses-valid) |
+## Bracket Sequences
+|  |
+| ------- |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/lydia321/Leet-Code-Questions/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 <!---LeetCode Topics End-->
